@@ -1,0 +1,588 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
+@import url(normalize.min.css);
+/* ---------------------- TAGS GERAIS ---------------------- */
+/* line 6, /var/www/html/sites/recolhimento/css/style.scss */
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
+  word-break: break-all; }
+
+/* line 13, /var/www/html/sites/recolhimento/css/style.scss */
+ul {
+  margin: 15px; }
+
+/* line 17, /var/www/html/sites/recolhimento/css/style.scss */
+body {
+  background: #4e4e4e; }
+
+/* line 21, /var/www/html/sites/recolhimento/css/style.scss */
+main {
+  padding-top: 80px; }
+
+/* line 25, /var/www/html/sites/recolhimento/css/style.scss */
+.mobile {
+  display: none !important; }
+
+/* line 29, /var/www/html/sites/recolhimento/css/style.scss */
+a {
+  background: #13d967;
+  color: #3b3b3b;
+  text-decoration: none;
+  padding: 5px; }
+
+/* line 36, /var/www/html/sites/recolhimento/css/style.scss */
+#teste {
+  position: fixed;
+  z-index: 10001;
+  background: #000;
+  color: #fff;
+  top: 10px;
+  right: 10px;
+  padding: 5px; }
+
+/* ---------------------- AVISO ---------------------- */
+/* line 47, /var/www/html/sites/recolhimento/css/style.scss */
+#carregando, #aviso, .blackpage, .totalblackpage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(78, 78, 78, 0.9);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 99;
+  perspective: 800px;
+  transform-origin: center top 0px;
+  display: none; }
+
+/* line 61, /var/www/html/sites/recolhimento/css/style.scss */
+.blackpage .carregando {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+
+/* line 67, /var/www/html/sites/recolhimento/css/style.scss */
+.totalblackpage {
+  display: block;
+  background: #4e4e4e; }
+
+/* line 72, /var/www/html/sites/recolhimento/css/style.scss */
+.totalblackpage .fechar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background: url(../img/fechar.png);
+  background-position: center;
+  background-size: contain; }
+
+/* line 84, /var/www/html/sites/recolhimento/css/style.scss */
+.totalblackpage div {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #11c45d;
+  font-size: 1.5em;
+  text-align: center; }
+
+/* line 94, /var/www/html/sites/recolhimento/css/style.scss */
+.totalblackpage div.anim {
+  animation: bemvindo 1.5s ease-in-out forwards; }
+
+/* line 98, /var/www/html/sites/recolhimento/css/style.scss */
+#prompt_envio {
+  display: none;
+  padding: 10px;
+  position: fixed;
+  z-index: 101;
+  background: #000;
+  min-width: 10px;
+  min-height: 10px;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 0.8em; }
+
+/* line 112, /var/www/html/sites/recolhimento/css/style.scss */
+#itens_carregados {
+  display: none;
+  padding: 10px;
+  position: fixed;
+  z-index: 101;
+  max-width: 300px;
+  min-height: 10px;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #959595;
+  font-size: 0.8em; }
+
+/* line 126, /var/www/html/sites/recolhimento/css/style.scss */
+#carregando .texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 250px;
+  background: #ca0f31;
+  margin: -40px -125px;
+  text-align: center;
+  line-height: 60px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1.5em;
+  color: #fff;
+  animation: enviando 3s linear infinite forwards; }
+
+/* line 143, /var/www/html/sites/recolhimento/css/style.scss */
+#aviso div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #f8f8f8;
+  width: 500px;
+  height: 250px;
+  margin: -125px -250px;
+  font-size: 1.3em;
+  padding: 50px;
+  box-sizing: border-box;
+  text-align: center; }
+
+/* line 157, /var/www/html/sites/recolhimento/css/style.scss */
+#aviso div span span {
+  font-size: 0.6em;
+  font-style: italic;
+  display: block;
+  color: #959595; }
+
+/* line 164, /var/www/html/sites/recolhimento/css/style.scss */
+#pvofform, #pessoaform {
+  position: fixed;
+  z-index: 100;
+  display: none;
+  top: 50%;
+  transform: translateY(-50%); }
+
+/* ---------------------- AVISO ---------------------- */
+/* line 174, /var/www/html/sites/recolhimento/css/style.scss */
+#senha_master {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 103;
+  transform: translateY(-50%); }
+
+/* line 183, /var/www/html/sites/recolhimento/css/style.scss */
+#senha_master.lider {
+  display: none; }
+
+/* line 187, /var/www/html/sites/recolhimento/css/style.scss */
+#mensagemsenha {
+  color: #c31f57;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px; }
+
+/* line 195, /var/www/html/sites/recolhimento/css/style.scss */
+input.senhaid, input.senhanum {
+  position: relative;
+  background: #ccc;
+  border: none;
+  padding: 15px;
+  height: 50px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  outline: none; }
+
+/* line 206, /var/www/html/sites/recolhimento/css/style.scss */
+input.senhaid {
+  width: 28%;
+  margin: 0 2% 5px 5%; }
+
+/* line 211, /var/www/html/sites/recolhimento/css/style.scss */
+input.senhanum {
+  width: 60%; }
+
+/* ---------------------- INÍCIO MENU ---------------------- */
+/* line 217, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu {
+  background: #13d967;
+  color: #313131;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 89;
+  top: 0;
+  left: 0; }
+
+/* line 228, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu {
+  transition: width .3s; }
+
+/* line 232, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu a:hover {
+  border-bottom: 3px solid #fff; }
+
+/* line 236, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu div {
+  display: inline-block;
+  float: left; }
+
+/* line 241, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu nav {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); }
+
+/* line 247, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu .menu {
+  background: url(../img/menu_icon.png);
+  background-size: 90%;
+  background-position: -20px 50%;
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 60px; }
+
+/* line 256, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu .menu:hover {
+  background-position: -10px 50%; }
+
+/* line 260, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu .menu {
+  transition: background-position .3s; }
+
+/* line 264, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu .logo {
+  background: #23aa5c;
+  background-size: contain;
+  background-position: center;
+  height: 60px;
+  width: 80px;
+  display: block;
+  line-height: 60px;
+  text-align: center; }
+
+/* line 275, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu nav ul li:first-child {
+  padding-left: 30px; }
+
+/* line 279, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu nav ul, #header_menu nav ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+/* line 285, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu nav ul li {
+  display: inline;
+  float: left;
+  line-height: 60px;
+  padding-right: 20px; }
+
+/* line 292, /var/www/html/sites/recolhimento/css/style.scss */
+#header_menu .link {
+  cursor: pointer;
+  transition: all .3s; }
+
+/* ---------------------- FIM DO MENU ---------------------- */
+/* line 299, /var/www/html/sites/recolhimento/css/style.scss */
+section {
+  position: relative; }
+
+/* line 303, /var/www/html/sites/recolhimento/css/style.scss */
+section .cortina {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background: rgba(78, 78, 78, 0.9);
+  display: block; }
+
+/* line 314, /var/www/html/sites/recolhimento/css/style.scss */
+section .cortina.off {
+  display: none; }
+
+/* line 318, /var/www/html/sites/recolhimento/css/style.scss */
+.carregando {
+  width: 100%;
+  background: url(../img/carregando.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: carregando 0.5s steps(6) both infinite;
+  padding: 20px;
+  box-sizing: border-box;
+  display: none; }
+
+/* line 330, /var/www/html/sites/recolhimento/css/style.scss */
+.carregando.on {
+  display: block; }
+
+/* line 334, /var/www/html/sites/recolhimento/css/style.scss */
+.on {
+  display: block; }
+
+/* line 338, /var/www/html/sites/recolhimento/css/style.scss */
+.off {
+  display: none; }
+
+/* line 342, /var/www/html/sites/recolhimento/css/style.scss */
+h2.passo {
+  background: #888888;
+  box-sizing: border-box;
+  margin: 20px 0;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 700; }
+  /* line 350, /var/www/html/sites/recolhimento/css/style.scss */
+  h2.passo span {
+    background: #777777;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 50px;
+    line-height: 50px;
+    margin-right: 20px;
+    text-align: center;
+    vertical-align: bottom; }
+
+/* line 363, /var/www/html/sites/recolhimento/css/style.scss */
+span.small {
+  color: #6d6d6d;
+  width: 80%;
+  margin: 10px 10% 30px 10%;
+  font-size: 0.9em;
+  font-style: italic;
+  word-break: break-word; }
+
+/* line 372, /var/www/html/sites/recolhimento/css/style.scss */
+.part1, .part2 {
+  display: none; }
+
+/* line 376, /var/www/html/sites/recolhimento/css/style.scss */
+#sobreaversao {
+  background: #4a4a4a;
+  font-size: 0.8em;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #656565; }
+
+/* line 384, /var/www/html/sites/recolhimento/css/style.scss */
+footer {
+  padding: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ccc; }
+
+/* ---------------------- FORM ---------------------- */
+/* line 393, /var/www/html/sites/recolhimento/css/style.scss */
+div.inputhint {
+  position: relative; }
+
+/* line 397, /var/www/html/sites/recolhimento/css/style.scss */
+ul.hint {
+  width: 90%;
+  list-style: none;
+  margin: 0 5%; }
+
+/* line 403, /var/www/html/sites/recolhimento/css/style.scss */
+ul.hint li {
+  width: 100%;
+  height: 40px;
+  background: #308d57;
+  text-align: center;
+  line-height: 40px; }
+
+/* line 411, /var/www/html/sites/recolhimento/css/style.scss */
+button.inputok {
+  position: absolute;
+  top: 10px;
+  right: 5%;
+  height: 50px;
+  width: 50px;
+  font-size: 1em;
+  margin: 0; }
+
+/* line 421, /var/www/html/sites/recolhimento/css/style.scss */
+input, button {
+  outline: none; }
+
+/* line 425, /var/www/html/sites/recolhimento/css/style.scss */
+button {
+  background: #11c45d;
+  border: none;
+  text-align: center;
+  height: 50px;
+  margin: 30px 5%;
+  width: 90%;
+  line-height: 50px;
+  font-size: 1.2em; }
+
+/* line 436, /var/www/html/sites/recolhimento/css/style.scss */
+#showics {
+  display: none; }
+
+/* line 440, /var/www/html/sites/recolhimento/css/style.scss */
+.showbt button {
+  margin: 0 5%;
+  border-top: 1px solid #16cb63;
+  border-bottom: 1px solid #16b55a; }
+
+/* line 446, /var/www/html/sites/recolhimento/css/style.scss */
+.showbt button:first-child {
+  margin-top: 5%; }
+
+/* line 450, /var/www/html/sites/recolhimento/css/style.scss */
+.showbt button:last-child {
+  margin-bottom: 5%;
+  border-bottom: none; }
+
+/* line 455, /var/www/html/sites/recolhimento/css/style.scss */
+.showbt button.red {
+  background: #c31f57;
+  border-top: 1px solid #cb1f5a;
+  border-bottom: 1px solid #b51f52;
+  color: #d8d8d8; }
+
+/* line 462, /var/www/html/sites/recolhimento/css/style.scss */
+input[type=text], input[type=number], input[type=email], select {
+  width: 90%;
+  margin: 10px 5%;
+  position: relative;
+  background: #ccc;
+  border: none;
+  padding: 15px;
+  height: 50px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  outline: none; }
+
+/* line 475, /var/www/html/sites/recolhimento/css/style.scss */
+input[type=submit] {
+  width: 100%;
+  background: #898989;
+  padding: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: 1px solid #404040; }
+
+/* line 484, /var/www/html/sites/recolhimento/css/style.scss */
+input[type=submit]:hover {
+  background: #999; }
+
+/* line 488, /var/www/html/sites/recolhimento/css/style.scss */
+input[type=submit]:active {
+  background: #757575;
+  box-shadow: 0px -5px #404040; }
+
+/* line 493, /var/www/html/sites/recolhimento/css/style.scss */
+input[type=submit]:disabled {
+  background: #4f4f4f;
+  box-shadow: 0px -5px #404040;
+  color: #454545;
+  text-shadow: none; }
+
+/* line 500, /var/www/html/sites/recolhimento/css/style.scss */
+button[disabled] {
+  background: #616161;
+  box-shadow: 0px -5px #616161;
+  color: #454545;
+  text-shadow: none; }
+
+/* ---------------------- TABELA ---------------------- */
+/* line 509, /var/www/html/sites/recolhimento/css/style.scss */
+table {
+  margin: 0 5%;
+  width: 90%;
+  box-sizing: border-box;
+  font-size: 0.8em;
+  font-family: monospace;
+  text-align: center;
+  background: #afafaf;
+  border-collapse: collapse;
+  color: #272727;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.25); }
+
+/* line 522, /var/www/html/sites/recolhimento/css/style.scss */
+table td {
+  border: 1px solid #272727;
+  padding: 5px; }
+
+/* --------- CARREGANDO ----------- */
+/* line 529, /var/www/html/sites/recolhimento/css/style.scss */
+.spinner {
+  animation: girar360 .5s linear infinite;
+  display: inline-block; }
+
+/* ---------------------- KEYFRAMES ---------------------- */
+@keyframes girar360 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes bemvindo {
+  0% {
+    transform: translateY(10%);
+    opacity: 0; }
+  100% {
+    transform: translateY(-50%);
+    opacity: 1; } }
+
+@keyframes carregando {
+  0% {
+    transform: rotateZ(0deg); }
+  100% {
+    transform: rotateZ(360deg); } }
+
+/* ---------------------- MEDIA QUERIES ---------------------- */
+@media only screen and (max-width: 825px) {
+  /* line 558, /var/www/html/sites/recolhimento/css/style.scss */
+  .desktop {
+    display: none; }
+  /* line 562, /var/www/html/sites/recolhimento/css/style.scss */
+  .mobile {
+    display: inline-block !important; }
+  /* line 566, /var/www/html/sites/recolhimento/css/style.scss */
+  #header_menu {
+    background: #13d967;
+    color: #fff;
+    width: 200px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0; }
+  /* line 576, /var/www/html/sites/recolhimento/css/style.scss */
+  #header_menu .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
+  /* line 582, /var/www/html/sites/recolhimento/css/style.scss */
+  #header_menu nav ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    background: #17be71;
+    text-align: center;
+    color: #fff; }
+  /* line 591, /var/www/html/sites/recolhimento/css/style.scss */
+  #header_menu nav ul li:first-child, #header_menu nav ul li {
+    padding: 0;
+    margin: 0; }
+  /* line 596, /var/www/html/sites/recolhimento/css/style.scss */
+  #header_menu nav ul {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    display: none; } }
+
+/*# sourceMappingURL=style.css.map */

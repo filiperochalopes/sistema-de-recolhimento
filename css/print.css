@@ -1,0 +1,21 @@
+*{
+    font-family: monospace;
+    font-size:12px;
+    margin:0;
+    padding:0;
+    word-break: break-all;
+    color: #131313;
+    font-weight:10px;
+}
+
+canvas#print{
+    position:absolute;
+/*    left:50%;
+    top:50%;
+    margin-left:-584px;
+    margin-top:-413px;    */
+    top:0;
+    left:0;
+    box-shadow:0px 0px 10px rgb(212,212,212);
+    width:100%;
+}
